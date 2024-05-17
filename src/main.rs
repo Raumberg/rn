@@ -23,6 +23,9 @@ struct Args {
     /// Enable log writing
     #[arg(long, default_value_t=false)]
     log: bool,
+
+    #[arg(long, default_value_t=String::from("pdf"))]
+    ext: String,
 }
 
 fn logger(log: bool) -> Result<(), fern::InitError> {
@@ -78,7 +81,7 @@ fn main() {
         };
         let path = entry.path();
         if let Some(ext) = path.extension() {
-            if ext == "pdf" {
+            if ext.to_str().unwrap() == args.ext {
                 let filename = path.file_name().unwrap().to_str().unwrap();
                 let new_filename = char_replace(&filename);
                 let new_path = path.with_file_name(&new_filename);
