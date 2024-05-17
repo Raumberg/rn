@@ -18,6 +18,7 @@ Options:
   -f, --folder <FOLDER>  Folder to search (ex: C:\Users\user\Documents\...)
       --regex <REGEX>    Regex pattern for renaming (ex: "^a-zA-Z0-9_-")
       --log              Enable log writing
+  -e, --ext <EXT>        [default: pdf]
   -h, --help             Print help
   -V, --version          Print version
 ```

@@ -24,7 +24,7 @@ struct Args {
     #[arg(long, default_value_t=false)]
     log: bool,
 
-    #[arg(long, default_value_t=String::from("pdf"))]
+    #[arg(short, long, default_value_t=String::from("pdf"))]
     ext: String,
 }
 
